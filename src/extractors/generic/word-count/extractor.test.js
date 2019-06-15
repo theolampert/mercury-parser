@@ -43,5 +43,18 @@ describe('GenericWordCountExtractor', () => {
 
       assert.equal(wordCount, 12);
     });
+    it('counts words article', () => {
+      const content = `
+        <main>
+          <p>One two three.</p>
+          <p>Four five six.</p>
+          <p>Seven eight nine.</p>
+          <p>Ten eleven twelve.</p>
+      `;
+
+      const wordCount = GenericWordCountExtractor.extract({ content });
+
+      assert.equal(wordCount, 12);
+    });
   });
 });
