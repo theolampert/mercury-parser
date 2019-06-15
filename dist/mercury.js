@@ -7001,7 +7001,7 @@ var GenericWordCountExtractor = {
   extract: function extract(_ref) {
     var content = _ref.content;
     var $ = cheerio.load(content);
-    var $content = $('div').first();
+    var $content = $('div, section, article, main').first();
     var text = normalizeSpaces($content.text());
     return text.split(/\s/).length;
   }
